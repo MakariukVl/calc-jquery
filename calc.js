@@ -81,59 +81,48 @@ function calculate() {
 
 //Button 0-9 handlers
 $("#button0").click(function () {
-    console.log("You pressed button0!");
     if (error) return;
     displayNumber($(this).val());
 });
 $("#button1").click(function () {
-    console.log("You pressed button1!");
     if (error) return;
     displayNumber($(this).val());
 });
 $("#button2").click(function () {
-    console.log("You pressed button2!");
     if (error) return;
     displayNumber($(this).val());
 });
 $("#button3").click(function () {
-    console.log("You pressed button3!");
     if (error) return;
     displayNumber($(this).val());
 });
 $("#button4").click(function () {
-    console.log("You pressed button4!");
     if (error) return;
     displayNumber($(this).val());
 });
 $("#button5").click(function () {
-    console.log("You pressed button5!");
     if (error) return;
     displayNumber($(this).val());
 });
 $("#button6").click(function () {
-    console.log("You pressed button6!");
     if (error) return;
     displayNumber($(this).val());
 });
 $("#button7").click(function () {
-    console.log("You pressed button7!");
     if (error) return;
     displayNumber($(this).val());
 });
 $("#button8").click(function () {
-    console.log("You pressed button8!");
     if (error) return;
     displayNumber($(this).val());
 });
 $("#button9").click(function () {
-    console.log("You pressed button9!");
     if (error) return;
     displayNumber($(this).val());
 });
 
 //operator button (+-*/) handlers
 $('#addButton').click(function () {
-    console.log("You hit the addButton!");
     if (operation) {
         display = calculate();
         displayElement.val(display);
@@ -144,7 +133,6 @@ $('#addButton').click(function () {
     operation = '+';
 });
 $('#subtractButton').click(function () {
-    console.log("You hit the subtractButton!");
     if (operation) {
         display = calculate();
         displayElement.val(display);
@@ -155,7 +143,6 @@ $('#subtractButton').click(function () {
     operation = '-';
 });
 $('#multiplyButton').click(function () {
-    console.log("You hit the multiplyButton!");
     if (operation) {
         display = calculate();
         displayElement.val(display);
@@ -166,7 +153,6 @@ $('#multiplyButton').click(function () {
     operation = '*';
 });
 $('#divideButton').click(function () {
-    console.log("You hit the divideButton!");
     if (operation) {
         display = calculate();
         displayElement.val(display);
@@ -179,14 +165,12 @@ $('#divideButton').click(function () {
 
 //Equals and clear button handlers
 $('#equalsButton').click(function () {
-    console.log("You hit the equalsButton!");
     if (operation) {
         display = calculate();
         displayElement.val(display);
     }
 });
 $("#clearButton").click(function () {
-    console.log("You hit the clearButton!");
     //reset mem, display and operation variables
     clearDisplay();
     operation = '';
