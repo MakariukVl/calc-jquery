@@ -5,8 +5,8 @@
 // Some global variables 
 var displayElement = $('#display');	//jquery object that represents <input id="display">
 var display = displayElement.val();	//display String value
-var operation = '';
-var mem;	//variable that holds all numeric values of display and operations ('+', '-', '*', '/') as String
+var operation = ''; //variable that hold operation value ('+', '-', '*', '/')
+var mem;	//variable that holds numeric value of display as String
 var error = false;
 
 /** 
@@ -50,7 +50,7 @@ function clearDisplay(value) {
  * show error text on web-page.
  * @return NaN, as result division by 0
  */
-function divideByZero() {
+function divideByZeroHandler() {
     $('#output').html('Error: You divide by 0!')
         .removeClass('normalText')
         .addClass('errorText');
@@ -72,7 +72,7 @@ function calculate() {
         case '-': result -= Number(display); break;
         case '*': result *= Number(display); break;
         case '/': if (Number(display)) result /= Number(display);
-        else result = divideByZero(); break;
+        else result = divideByZeroHandler(); break;
         default: result = Number(display); break;
     }
     operation = '';
@@ -80,49 +80,13 @@ function calculate() {
 }
 
 //Button 0-9 handlers
-$("#button0").click(function () {
-    if (error) return;
-    displayNumber($(this).val());
-});
-$("#button1").click(function () {
-    if (error) return;
-    displayNumber($(this).val());
-});
-$("#button2").click(function () {
-    if (error) return;
-    displayNumber($(this).val());
-});
-$("#button3").click(function () {
-    if (error) return;
-    displayNumber($(this).val());
-});
-$("#button4").click(function () {
-    if (error) return;
-    displayNumber($(this).val());
-});
-$("#button5").click(function () {
-    if (error) return;
-    displayNumber($(this).val());
-});
-$("#button6").click(function () {
-    if (error) return;
-    displayNumber($(this).val());
-});
-$("#button7").click(function () {
-    if (error) return;
-    displayNumber($(this).val());
-});
-$("#button8").click(function () {
-    if (error) return;
-    displayNumber($(this).val());
-});
-$("#button9").click(function () {
+$('.num-buttons').click(function () {
     if (error) return;
     displayNumber($(this).val());
 });
 
 //operator button (+-*/) handlers
-$('#addButton').click(function () {
+$('.operator').click(function () {
     if (operation) {
         display = calculate();
         displayElement.val(display);
@@ -130,37 +94,7 @@ $('#addButton').click(function () {
     if (error) return;
     // ORDER is important! Call next method, after possible operation calculation
     clearDisplay(Number(display));	//save display in mem and clear
-    operation = '+';
-});
-$('#subtractButton').click(function () {
-    if (operation) {
-        display = calculate();
-        displayElement.val(display);
-    }
-    if (error) return;
-    // ORDER is important! Call next method, after possible operation calculation
-    clearDisplay(Number(display));	//save display in mem and clear
-    operation = '-';
-});
-$('#multiplyButton').click(function () {
-    if (operation) {
-        display = calculate();
-        displayElement.val(display);
-    }
-    if (error) return;
-    // ORDER is important! Call next method, after possible operation calculation
-    clearDisplay(Number(display));	//save display in mem and clear
-    operation = '*';
-});
-$('#divideButton').click(function () {
-    if (operation) {
-        display = calculate();
-        displayElement.val(display);
-    }
-    if (error) return;
-    // ORDER is important! Call next method, after possible operation calculation
-    clearDisplay(Number(display));	//save display in mem and clear
-    operation = '/';
+    operation = $(this).val();
 });
 
 //Equals and clear button handlers
