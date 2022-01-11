@@ -1,81 +1,66 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>WebCalc</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 
 <head>
-
-  <style>
-    button {
-      font-size: 200%;
-      width: 40px;
-    }
-
-    input {
-      font-size: 14px;
-      height: 40px;
-      text-align: right;
-    }
-
-    .errorText {
-      color: red;
-    }
-
-    .errorBox {
-      border: 5px groove red;
-      background-color: #ffcccc;
-    }
-
-    .normalText {
-      color: black;
-    }
-
-    .normalBox {
-      border: 5px groove black;
-      background-color: #ccdddd;
-    }
-  </style>
 </head>
 
 <body>
+  <section class="workspace">
 
-  <table>
-    <tr>
-      <td colspan="4"><input id="display" class="normalBox" name="display" disabled></input></td>
-    </tr>
+    <table class="calc">
+      <tr>
+        <td colspan="4"><input id="display" name="display" class="calc__display calc__display_ok" value="0"
+            disabled></input></td>
+      </tr>
 
-    <tr>
-      <td><button id="button1" class="num-buttons" value="1">1</button></td>
-      <td><button id="button2" class="num-buttons" value="2">2</button></td>
-      <td><button id="button3" class="num-buttons" value="3">3</button></td>
-      <td><button id="addButton" class="operator" value="+">+</button></td>
-    </tr>
-    <tr>
-      <td><button id="button4" class="num-buttons" value="4">4</button></td>
-      <td><button id="button5" class="num-buttons" value="5">5</button></td>
-      <td><button id="button6" class="num-buttons" value="6">6</button></td>
-      <td><button id="subtractButton" class="operator" value="-">-</button></td>
-    </tr>
-    <tr>
-      <td><button id="button7" class="num-buttons" value="7">7</button></td>
-      <td><button id="button8" class="num-buttons" value="8">8</button></td>
-      <td><button id="button9" class="num-buttons" value="9">9</button></td>
-      <td><button id="multiplyButton" class="operator" value="*">*</button></td>
-    </tr>
-    <tr>
-      <td><button id="clearButton">C</button></td>
-      <td><button id="button0" class="num-buttons" value="0">0</button></td>
-      <td><button id="equalsButton">=</button></td>
-      <td><button id="divideButton" class="operator" value="/">&#247;</button></td>
-    </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><button id="clearButton" class="calc__clr-btn">C</button></td>
+        <td><button id="divideButton" class="calc__op-btn" value="/">&#247;</button></td>
+      </tr>
+      <tr>
+        <td><button id="button9" value="9" class="calc__num-btn">9</button></td>
+        <td><button id="button8" value="8" class="calc__num-btn">8</button></td>
+        <td><button id="button7" value="7" class="calc__num-btn">7</button></td>
+        <td><button id="multiplyButton" class="calc__op-btn" value="*">*</button></td>
+      </tr>
+      <tr>
+        <td><button id="button6" value="6" class="calc__num-btn">6</button></td>
+        <td><button id="button5" value="5" class="calc__num-btn">5</button></td>
+        <td><button id="button4" value="4" class="calc__num-btn">4</button></td>
+        <td><button id="addButton" class="calc__op-btn" value="+">+</button></td>
+      </tr>
+      <tr>
+        <td><button id="button3" value="3" class="calc__num-btn">3</button></td>
+        <td><button id="button2" value="2" class="calc__num-btn">2</button></td>
+        <td><button id="button1" value="1" class="calc__num-btn">1</button></td>
+        <td><button id="subtractButton" class="calc__op-btn" value="-">-</button></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button id="button0" value="0" class="calc__num-btn">0</button></td>
+        <td></td>
+        <td><button id="equalsButton" class="calc__eq-btn">=</button></td>
+      </tr>
 
+    </table>
 
+    <div class="log" id="log">
 
-  </table>
-
-  <span id='output' class="normalText">
-    <!-- Use this span for writing debug messages or anything else you think will help! -->
-  </span>
+    </div>
+  </section>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="calc.js"></script>
+  <script src="js/index.js"></script>
 
 
 </body>

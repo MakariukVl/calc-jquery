@@ -1,0 +1,114 @@
+body {
+  box-sizing: border-box;
+}
+
+.workspace {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.calc {
+  padding: 30px;
+  border-radius: 50px;
+  background-color: slategrey;
+  flex: 0 1 300px;
+  align-self: start;
+  max-height: 455px;
+}
+
+.log {
+  flex: 0 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden auto;
+  padding: 10px;
+  max-height: 455px;
+}
+
+.calc__clr-btn,
+.calc__op-btn,
+.calc__num-btn,
+.calc__op-btn,
+.calc__eq-btn {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  font-size: xx-large;
+  margin: 0 auto;
+  border-radius: 10px;
+  text-align: center;
+  width: 55px;
+  height: 55px;
+  border-style: outset;
+  border-color: rgb(118, 118, 118);
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: rgb(239, 239, 239);
+}
+
+.calc__clr-btn:active,
+.calc__op-btn:active,
+.calc__num-btn:active,
+.calc__op-btn:active,
+.calc__eq-btn:active {
+  border-style: inset;
+}
+
+.calc__display {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: x-large;
+  height: 50px;
+  width: 200px;
+  text-align: right;
+  padding: 0.2em 1em;
+  margin-bottom: 30px;
+  border: 2px inset teal;
+  border-radius: 10px;
+  background-color: #ccdddd;
+}
+
+.calc__display_ok {
+  color: black;
+}
+
+.calc__display_error {
+  color: red;
+}
+
+.log__entry {
+  display: flex;
+  gap: 10px;
+}
+
+.log__circle {
+  flex: 1 1 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  text-align: left;
+  cursor: pointer;
+}
+
+.log__close {
+  flex: 1 1 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  text-align: right;
+  cursor: pointer;
+}
+
+.color-red {
+  color: red !important;
+}
+
+.log__equation {
+  flex: 1 1 800%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  text-align: center;
+}
+
+.log__equation_underlined {
+  text-decoration: underline;
+}
